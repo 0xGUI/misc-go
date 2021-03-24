@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: misc-go
+  labels:
+    app: go
+spec:
+  containers:
+    - name: misc-go
+      image: misc-go
+      imagePullPolicy: Never
