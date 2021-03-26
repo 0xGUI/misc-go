@@ -25,7 +25,9 @@ jobs:
         echo ${GOROOT}
 
     - name: Install dependencies
-      run: go get -v -u ./...
+      run: |
+        export PATH=$PATH:$(go env GOPATH)/bin
+        go get -v -u ./...
 
     - name: Build
       run: go build -v ./...
