@@ -17,9 +17,12 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.15
-        
-    - name: Get 
-      run: go get -v ./...
+
+    - name: Debug
+      run: |
+        pwd
+        echo ${GOPATH}
+        echo ${GOROOT}
 
 
     - name: Build
