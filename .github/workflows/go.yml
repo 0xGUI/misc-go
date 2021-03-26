@@ -24,6 +24,8 @@ jobs:
         echo ${GOPATH}
         echo ${GOROOT}
 
+    - name: Install dependencies
+      run: go get -v -u ./...
 
     - name: Build
       run: go build -v ./...
