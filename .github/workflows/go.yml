@@ -26,8 +26,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        export PATH=$PATH:$(go env GOPATH)/bin
-        go get -v -u ./...
+        go get -v -t -d ./...
 
     - name: Build
       run: go build -v ./...
