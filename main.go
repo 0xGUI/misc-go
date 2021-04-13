@@ -1,9 +1,9 @@
 package main
 
 import (
-	"context"
-	"fmt"
-	"time"
+  "context"
+  "fmt"
+  "time"
   "net/http"
   "os"
   "crypto/tls"
@@ -12,18 +12,18 @@ import (
   _ "github.com/lib/pq"
 
   "k8s.io/apimachinery/pkg/api/errors"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/client-go/kubernetes"
-	"k8s.io/client-go/rest"
-	//
-	// Uncomment to load all auth plugins
-	// _ "k8s.io/client-go/plugin/pkg/client/auth"
-	//
-	// Or uncomment to load specific auth plugins
-	// _ "k8s.io/client-go/plugin/pkg/client/auth/azure"
-	// _ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
-	// _ "k8s.io/client-go/plugin/pkg/client/auth/oidc"
-	// _ "k8s.io/client-go/plugin/pkg/client/auth/openstack"
+  metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+  "k8s.io/client-go/kubernetes"
+  "k8s.io/client-go/rest"
+
+// Uncomment to load all auth plugins
+// _ "k8s.io/client-go/plugin/pkg/client/auth"
+//
+// Or uncomment to load specific auth plugins
+// _ "k8s.io/client-go/plugin/pkg/client/auth/azure"
+// _ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
+// _ "k8s.io/client-go/plugin/pkg/client/auth/oidc"
+// _ "k8s.io/client-go/plugin/pkg/client/auth/openstack"
 )
 
 // Test variables
@@ -106,14 +106,14 @@ func main() {
 		}
 		fmt.Printf("There are %d pods in the cluster in the default namespace\n", len(pods.Items))
 
-   // Make call to Elastic
-    curlElastic()
-   // Connect to DB
-    connectPsql()
+		// Make call to Elastic
+		curlElastic()
+		// Connect to DB
+		connectPsql()
 
 
 
-   // TODO: Examples for error handling:
+		// TODO: Examples for error handling:
 		// - Use helper functions e.g. errors.IsNotFound()
 		// - And/or cast to StatusError and use its properties like e.g. ErrStatus.Message
 		_, err = clientset.CoreV1().Pods("default").Get(context.TODO(), "misc-go", metav1.GetOptions{})
