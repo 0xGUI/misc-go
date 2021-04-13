@@ -9,3 +9,5 @@ spec:
     - name: misc-go
       image: misc-go
       imagePullPolicy: Never
+# TODO: 
+# ADD env variables to pass to misc-go
